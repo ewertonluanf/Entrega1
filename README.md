@@ -1,26 +1,25 @@
-                Modelagem UML Textual
+# Biblioteca Pessoal Digital
 
-[Publicação] Classe abstrata
+Um sistema para gerenciar uma biblioteca pessoal de livros e revistas digitais, permitindo o cadastro e o registro das leituras status e relatórios da coleção.
 
-    Atributos privados:
-        - _titulo: str
-        - _autor: str
-        - _ano: int
-        - _genero: str
-        - _numero_paginas: int
-        - _status: str ("NÃO LIDO", "LENDO", "LIDO")
-        - _avaliacao: float (0 a 10)
-        - _data_inclusao: date
-        - _data_inicio: date
-        - _data_termino: date
-        - _anotacoes: List[Anotacao]
+# Objetivo
+O projeto visa aplicar conceitos de Programação Orientada a Objetos (POO) em Python:
+- Encapsulamento e validações com `@property`.
+- Herança simplis e multipla.
+- Métodos especiais(`__str__`,`__repr`,`__lt__`,`__eq__`).
+- Padrões de projeto (Strategy / State / Repository).
+- Persistência em JSON/SQLite.
+- Testes automatizados com `pytest`.
 
-    Métodos:
-        - iniciar_leitura(data: date): void
-        - concluir_leitura(data: date, avaliacao: float): void
-        - adicionar_anotacao(texto: str, trecho: str = None): void
-        - __str__(): str
-        - __repr__(): str
+# Estrutura Planejada de Classes
+
+1. `Publicação`: Classe abstrata base com atributos comuns da coleção.
+2. `Livro`: Especialização de publicação contendo ISBN.
+3. `Revista`: Especialização de publicação contendo edição e ISSN.
+4. `Anotação`: Representa notas e trechos vinculados as publicações.
+5. `Coleção`: Agrupa e gerencia a lista de publicações.
+6. `RelatorioService`: Serviço para cálculo de metricas e estatísticas.
+7. `DadosRepository`: Camada de armazenamento de dados.
         - __lt__(other: Publicacao): bool
         - __eq__(other: Publicacao): bool
 
